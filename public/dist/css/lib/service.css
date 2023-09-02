@@ -1,3 +1,31 @@
+.section {
+  padding: 0 16px;
+  display: flex;
+  justify-content: center;
+}
 
+.section__content {
+  width: 100%;
+}
+@media all and (width < 1440px) {
+  .section__content {
+    max-width: 1200px;
+  }
+}
+@media all and (width < 1260px) {
+  .section__content {
+    max-width: 1000px;
+  }
+}
+@media all and (width < 1000px) {
+  .section__content {
+    max-width: 800px;
+  }
+}
+@media all and (width < 620px) {
+  .section__content {
+    max-width: 600px;
+  }
+}
 
 /*# sourceMappingURL=service.css.map */

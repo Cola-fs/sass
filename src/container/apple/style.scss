@@ -1,1 +1,58 @@
 @use '../../lib/service.scss' as s;
+
+.header {
+  @extend .section;
+  background: s.color('BgDark');
+}
+
+.header__content {
+  @extend .section__content;
+  display: flex;
+  padding: s.space(4) 0;
+  justify-content: space-between;
+}
+
+.header__block {
+  display: flex;
+  gap: s.space(8);
+}
+
+.header__icon {
+  @include s.click;
+}
+
+.header__link {
+  text-decoration: none;
+  @include s.click;
+  color: s.color('whiteLight');
+}
+
+.product {
+  @extend .section;
+  padding-top: s.space(20);
+  padding-bottom: s.space(20);
+}
+.product__content {
+  display: grid;
+  gap: s.space(5);
+  text-align: center;
+}
+
+.product__title {
+  font-size: 56px;
+  font-weight: 700;
+  color: s.color('fontDark');
+}
+
+.product__description {
+  font-size: 28px;
+}
+
+.product__action {
+  display: flex;
+  align-items: center;
+  gap: s.space(5);
+  justify-content: center;
+  @include s.click;
+  
+}

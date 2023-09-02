@@ -1,27 +1,13 @@
 @use '../../lib/service.scss' as s;
 
 
+
+
 .page {
   font-family: 'Roboto', sans-serif;
   font-size: s.size();
   background-color: s.color(Background);
 }
-
-section{
-    display: flex;
-    justify-content: center;
-}
-.section_content{
-    max-width: 1200px;
-    width: 100%;
-}
-$contentSizeMap: (
-  desktop: 1200px,
-  laptop: 1000px,
-  planshet: 800px,
-  mobile: 600px,
-);
-
 @function contentsize($key: 'default') {
   @return map-get($contentSizeMap, $key);
 }
