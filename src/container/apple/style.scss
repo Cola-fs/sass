@@ -3,6 +3,7 @@
 .header {
   @extend .section;
   background: s.color('BgDark');
+  flex-direction: column;
 }
 
 .header__content {
@@ -27,12 +28,22 @@
   color: s.color('whiteLight');
 }
 
+.ad__box {
+  @extend .section__content;
+  display: flex;
+  padding: s.space(3) 0;
+  justify-content: space-between;
+  background-color: s.color('white');
+}
+
 .product {
   @extend .section;
-  padding-top: s.space(20);
-  padding-bottom: s.space(20);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center;
 }
-  
+
 .product__content {
   display: grid;
   gap: s.space(5);
@@ -56,37 +67,139 @@
   gap: s.space(5);
   justify-content: center;
   @include s.click;
-  
 }
 
-.product_link{
+.product_link {
   @include s.linkAction;
 }
 
-.product__big{
+.product__big {
   max-height: 700px;
   height: 100vh;
+  padding-top: s.space(20);
+  padding-bottom: s.space(20);
+
+  @media all and (width < s.screen('tablet')) {
+    background-size: 150%;
+    max-height: 500px;
+  }
 }
+.product__small {
+  max-height: 580px;
+  height: 100vh;
+  padding-top: s.space(12);
+  padding-bottom: s.space(12);
 
-.product__top{
+  .product__title {
+    font-size: s.space(10);
+  }
 
-}
+  .product_link {
+    font-size: s.space(4);
+  }
 
-.product__ifonPro{
-  background-image: url(/img/IfonPro.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom center;
-  background-color: black;
+  .product__description {
+    font-size: s.space(5);
+  }
 
-}
-
-.product__dark{
-  .product__title, .product__description{
-    color: s.color('Background');
+  @media all and (width < s.screen('tablet')) {
+    background-size: 150%;
+    max-height: 500px;
   }
 }
 
-.product__top{
-  align-items: flex-start;
+.product__top {
+  .product__content {
+    align-content: flex-start;
+  }
+}
+
+.product__bottom {
+  .product__content {
+    align-content: flex-end;
+  }
+}
+
+.product__dark {
+  .product__title,
+  .product__description {
+    color: s.color('Background');
+  }
+  background-color: black;
+}
+
+.product__light {
+  .product__title,
+  .product__description {
+    color: s.color('fontDark');
+  }
+  background-color: s.color('white');
+}
+
+$productImage: (
+  'ifonPro' '/img/IfonPro.png',
+  'ifon' '/img/Ifon.png',
+  'iwatch' '/img/iwatch.png',
+  'trade_in' '/img/trade_in.png',
+  'conference' '/img/conference.png',
+  'ipad' '/img/ipad.png',
+  'small_business' '/img/small_business.png',
+  'gift' '/img/gift.png',
+  'card' '/img/card.png'
+);
+
+@each $slass, $url in $productImage {
+  .product__#{$slass} {
+    background-image: url(#{$url});
+  }
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding-top: s.space(10);
+  padding-bottom: s.space(10);
+  gap: s.space(5);
+
+  @media all and (width < s.screen('tablet')) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media all and (width < s.screen('mobile')) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.footer__block {
+  display: flex;
+  flex-direction: column;
+  gap: s.space(4);
+}
+
+.footer__block-link {
+  display: flex;
+  flex-direction: column;
+  gap: s.space(3);
+}
+
+.footer__title {
+  font-size: s.space(3);
+  font-weight: 600;
+  color: s.color('fontDark');
+}
+
+.footer_link {
+  @include s.click;
+  color: #424245;
+  font-size: s.space(3);
+
+  font-weight: 400;
+}
+
+.ad__box {
+  @extend .section__content;
+  display: flex;
+  padding: s.space(3) 0;
+  justify-content: space-between;
+  background-color: s.color('white');
 }
