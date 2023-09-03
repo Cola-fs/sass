@@ -32,10 +32,12 @@
   padding-top: s.space(20);
   padding-bottom: s.space(20);
 }
+  
 .product__content {
   display: grid;
   gap: s.space(5);
   text-align: center;
+  align-content: center;
 }
 
 .product__title {
@@ -55,4 +57,36 @@
   justify-content: center;
   @include s.click;
   
+}
+
+.product_link{
+  @include s.linkAction;
+}
+
+.product__big{
+  max-height: 700px;
+  height: 100vh;
+}
+
+.product__top{
+
+}
+
+.product__ifonPro{
+  background-image: url(/img/IfonPro.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-color: black;
+
+}
+
+.product__dark{
+  .product__title, .product__description{
+    color: s.color('Background');
+  }
+}
+
+.product__top{
+  align-items: flex-start;
 }
