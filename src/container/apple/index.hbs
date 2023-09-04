@@ -5,8 +5,9 @@
 
 <div class="page">
   <section>
+    {{#with header}}
     <div class="header">
-      {{#with header}}
+
       <header class="header__content">
         <div class="header__block">
           <img src="/svg/apple.svg" alt="Apple" class="header__icon">
@@ -22,20 +23,26 @@
           <img src="/svg/profile.svg" alt="profile" class="header__icon">
         </div>
       </header>
+    </div>
+
+    <div class="ad">
       {{#with ad}}
       <div class="ad__box">
         <h3 class="ad__title">
           {{title}}
         </h3>
         {{#with link}}
-        <a href="{{url}}" class="ad__link">{{text}}</a>
+        <div class="ad__link">
+          <a href="{{url}}" class="ad--link">{{text}}</a>
+        </div>
+        
         {{/with}}
       </div>
       {{/with}}
-      {{/with}}
-
-
     </div>
+
+
+    {{/with}}
 
     {{#with iphone_pro}}
     <section class="product product__big product__top product__dark product__ifonPro">
